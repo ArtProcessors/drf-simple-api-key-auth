@@ -1,8 +1,8 @@
 from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
 
-USERNAME = getattr('REST_FRAMEWORK_SIMPLE_AUTH_USER_USERNAME', 'simple_api_user')
-EMAIL = getattr('REST_FRAMEWORK_SIMPLE_AUTH_USER_EMAIL', 'simple_api_user@example.com')
+USERNAME = getattr(settings, 'REST_FRAMEWORK_SIMPLE_AUTH_USER_USERNAME', 'simple_api_user')
+EMAIL = getattr(settings, 'REST_FRAMEWORK_SIMPLE_AUTH_USER_EMAIL', 'simple_api_user@example.com')
 
 try:
     API_KEYS = settings.REST_FRAMEWORK_SIMPLE_AUTH_KEYS
