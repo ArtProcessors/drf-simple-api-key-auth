@@ -34,6 +34,7 @@ class SimpleApiKeyAuthentication(TokenAuthentication):
             raise AuthenticationFailed('Invalid key')
         
         user = self._get_user()
+        return user, key
 
     def authenticate_header(self, request):
         return 'Key'
