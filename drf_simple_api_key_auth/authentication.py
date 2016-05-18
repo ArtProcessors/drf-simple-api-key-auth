@@ -13,6 +13,7 @@ class SimpleApiKeyAuthentication(TokenAuthentication):
     For example:
         Authorization: Key 401f7ac837da42b97f613d789819ff93537bee6a
     """
+    keyword = 'Key'
 
     def _get_user(self):
         UserModel = get_user_model()
@@ -35,6 +36,3 @@ class SimpleApiKeyAuthentication(TokenAuthentication):
         
         user = self._get_user()
         return user, key
-
-    def authenticate_header(self, request):
-        return 'Key'
