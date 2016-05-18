@@ -17,7 +17,7 @@ class SimpleApiKeyAuthentication(TokenAuthentication):
     def _get_user(self):
         UserModel = get_user_model()
 
-        user, created = UserModel.get_or_create(
+        user, created = UserModel.objects.get_or_create(
             username=settings.USERNAME,
             email=settings.EMAIL,
             is_superuser=True,
