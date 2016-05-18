@@ -27,7 +27,7 @@ class SimpleApiKeyAuthentication(TokenAuthentication):
             user.set_unusable_password()
             user.save()
 
-        return user, key
+        return user
 
     def authenticate_credentials(self, key):
         if key not in settings.API_KEYS:
