@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='drf-simple-api-key-auth',
-    version='0.4.0',
+    version='0.5.0',
     description='Simple API key auth for Django REST Framework',
     author='Art Processors',
     author_email='jacob@artprocessors.net',
