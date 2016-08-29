@@ -18,8 +18,11 @@ class SimpleApiKeyAuthentication(TokenAuthentication):
     def _get_user(self):
         UserModel = get_user_model()
 
-        user, created = UserModel.objects.get_or_create(**settings.USER_KWARGS)
-        
+        user, created = UserModel.objects.update_or_create(
+            email=settings.USER_KWARGS['email'],
+            defaults=settings.USER_KWARGS
+        )
+
         if created:
             user.set_unusable_password()
             user.save()
